@@ -5,10 +5,6 @@ layout: default
 <section class="tutorial">
 	<section class="sidebar sticky">
 		<ul>
-			{% assign sub_navigation = content | extract_element: 'h2' %}
-			{% for item in sub_navigation %}
-				<li><a href="#{{ item.id }}">{{ item.text }}</a></li>
-			{% endfor %}
 		</ul>
 	</section>
 	<section class="tutorial-content">
@@ -103,18 +99,25 @@ layout: default
 	</div>
 </div>
 
-<script src="{{ site.baseurl }}/js/main.js"></script>
 
 <script>
 	var headings = document.querySelectorAll("h2[id]");
 
-	console.log(headings);
 	for (var i = 0; i < headings.length; i++) {
+
+		// generate lists of heading in sidebar
+		var sidebarListItem = document.createElement("li");
+		var sidebarAnchorLink = document.createElement("a");
+		sidebarAnchorLink.innerText = headings[i].innerText;
+		sidebarAnchorLink.href = "#" + headings[i].id;
+		sidebarListItem.appendChild(sidebarAnchorLink);
+		$(".sidebar ul").append(sidebarListItem);
+
+		// generate anchor link for each heading
 		var anchorLink = document.createElement("a");
 		anchorLink.innerText = "#";
 		anchorLink.href = "#" + headings[i].id;
 		anchorLink.classList.add("header-link");
-
 		headings[i].appendChild(anchorLink);
 	}
 
@@ -143,3 +146,5 @@ layout: default
 		}
 	});
 </script>
+
+<script src="{{ site.baseurl }}/js/main.js"></script>
