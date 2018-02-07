@@ -1,0 +1,6 @@
+---
+layout: default
+---
+
+{% assign posts = site.categories[page.category] | sort: "title" %}
+{% include archive.html %}
