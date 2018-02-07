@@ -1,8 +1,7 @@
 ---
 date: 2017-01-16
 title: First steps
-categories:
-  - getting-started
+categories: getting-started
 description: Your first steps on our platform
 type: Document
 ---

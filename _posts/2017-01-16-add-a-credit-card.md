@@ -1,8 +1,7 @@
 ---
 date: 2017-01-16
 title: Add a credit card
-categories:
-  - billing
+categories: billing
 description: "Add a credit card to your account"
 type: Document
 ---
