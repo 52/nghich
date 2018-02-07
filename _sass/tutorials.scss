@@ -121,6 +121,10 @@
 		@media #{$mid-point} {
 			margin-left: 230px;
 		}
+
+		h1 {
+			margin: .2em 0;
+		}
 	}
 }
 
@@ -375,4 +379,39 @@
 	li {
 		margin: 0;
 	}
+}
+
+.category-buttons {
+	font-family: sans-serif;
+  margin:0 0 0 0;
+}
+.category-buttons a {
+  display:inline-block;
+  font-size: .8em;
+  text-decoration:none;
+  text-transform:capitalize;
+  border:1px solid #999;
+  padding:6px 8px;
+  line-height:1em;
+  border-radius:3px;
+  margin:0 5px 0 0;
+}
+.category-buttons a:hover {
+  background:#f6f6f6;
+}
+
+.tag-buttons {
+  margin:0 0 1em 0;
+  border-bottom: 1px solid #999;
+  padding-bottom: .2em
+}
+.tag-buttons a {
+  font-size:1em;
+  text-decoration:none;
+  padding:6px 5px;
+  line-height:1em;
+  margin:0 5px 0 0;
+}
+.tag-buttons a:hover code {
+  background: #4f4f4f;
 }
