@@ -5,72 +5,12 @@
 	top: -2px;
 }
 
-.categories {
-	display: flex;
-	flex-wrap:wrap;
-	flex-direction:row;
-	justify-content:flex-start;
-	align-items:stretch;
-	font-size: .9em;
-
-	h3 {
-		font-size: 2.75rem;
-		margin-bottom: 20px;
-	}
-}
-
-.category {
-	flex: 0 0 100%;
-
-	h3 {
-		text-transform:capitalize;
-	}
-
-	@media #{$mid-point} {
-		flex: 0 0 50%;
-	}
-
-	@media #{$desktop} {
-		flex: 0 0 33%;
-	}
-	margin: 0 0 30px 0;
-
-	ul {
-		padding: 0;
-		margin: 0;
-		list-style: none;
-	}
-
-	li {
-		margin-right: 15px;
-		a {
-			padding: 2px 0;
-			display: flex;
-			font-size: 1.1em;
-			align-items: center;
-
-			svg {
-				margin: 0 5px 0 0;
-				fill: $link-color;
-				width: 25px;
-				height: 25px;
-				-webkit-transition: all .2s ease;
-			}
-
-			&:hover {
-				text-decoration: none;
-				svg {
-					fill: $link-hover-color;
-					width: 30px;
-					height: 30px;
-				}
-			}
-		}
-	}
-}
-
 .tutorial {
 	display: flex;
+
+	.tag-buttons {
+	  border-bottom: 1px solid #999;
+	}
 
 	h2 {
 		margin-top: 40px;
@@ -145,57 +85,18 @@
 	}
 
 	h3 {
-		margin: 0;
+		margin-top: .2em;
 		font-size: 1.3em;
 	}
 
 	a {
-		display: flex;
 		text-decoration: none;
-		padding: 5px;
 		border-radius: 5px;
 		height: 100%;
+	}
 
-		article {
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-		}
-
-		.icon {
-			flex: 0 0 50px;
-			display: flex;
-			align-items: center;
-			padding: 0 5px 0 0;
-			svg {
-				width: 35px;
-				height: 35px;
-				fill: $link-color;
-				-webkit-transition: all .2s ease;
-				margin: 0 auto;
-			}
-		}
-
-		.length {
-			color: $light-grey;
-			font-size: .8em;
-		}
-
-		&:hover {
-			svg {
-				fill: $link-hover-color;
-				width: 40px;
-				height: 40px;
-			}
-		}
-
-		p {
-			margin: 5px 0 0 0;
-			color: #888;
-			font-size: .9em;
-			line-height: 1.4em;
-			width: 100%;
-		}
+	.lighter-color {
+		color: #888;
 	}
 }
 
@@ -402,13 +303,12 @@
 
 .tag-buttons {
   margin:0 0 1em 0;
-  border-bottom: 1px solid #999;
-  padding-bottom: .2em
+  padding-bottom: .2em;
 }
+
 .tag-buttons a {
   font-size:1em;
   text-decoration:none;
-  padding:6px 5px;
   line-height:1em;
   margin:0 5px 0 0;
 }

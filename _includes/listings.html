@@ -1,15 +1,34 @@
 <ul class="listing">
 	{% for item in include.listings %}
-		<li {% if item.url == page.url %}class="active"{% endif %}>
-			<a href="{{ site.baseurl }}{{ item.url }}">
-				<div class="icon">{% include document-icon.html icon=item.type %}</div>
-				<article>
-					<div>
-						<h3>{% if include.numbered %}{{ forloop.index }}. {% endif %}{{ item.title }}</h3>
-						<p class="description">{{ item.description }}</p>
+		<li>
+					<div class="category-buttons">
+						{% for category in item.categories %}
+							<a class="cate-{{category}}" href="{{ site.baseurl }}/category/{{ category }}/">
+								{{ category | replace: "-", " " }}
+							</a>
+						{% endfor %}
 					</div>
-				</article>
-			</a>
+
+					<h3><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></h3>
+
+					<div class="lighter-color">{{ item.description }}</div>
+
+					<div class="tag-buttons">
+						{% assign number_of_tags = item.tags | size %}
+						{% if number_of_tags > 0 %}
+							{% if number_of_tags == 1 %}
+								<span class="lighter-color one-tag">Tag:<span>
+							{% else %}
+								<span class="lighter-color">Tags:<span>
+							{% endif %}
+
+							{% for tag in item.tags %}
+								<a class="tag-{{tag}}" href="{{ site.baseurl }}/tag/{{ tag }}/">
+									<code>{{ tag }}</code>
+								</a>
+							{% endfor %}
+						{% endif%}
+					</div>
 		</li>
 	{% endfor %}
 </ul>

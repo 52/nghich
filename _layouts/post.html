@@ -11,7 +11,7 @@ layout: default
 		<div class="category-buttons">
 			{% for category in page.categories %}
 				<a href="{{ site.baseurl }}/category/{{ category }}/">
-					{{ category }}
+					{{ category | replace: "-", " " }}
 				</a>
 			{% endfor %}
 		</div>

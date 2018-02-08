@@ -2,5 +2,9 @@
 layout: default
 ---
 
-{% assign posts = site.categories[page.category] | sort: "title" %}
+{% assign posts = site.categories[page.category] %}
 {% include archive.html %}
+
+<script type="text/javascript">
+  $(".cate-{{page.category}}").remove();
+</script>

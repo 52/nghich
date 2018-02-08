@@ -2,5 +2,10 @@
 layout: default
 ---
 
-{% assign posts = site.tags[page.tag] | sort: "title" %}
+{% assign posts = site.tags[page.tag] %}
 {% include archive.html %}
+
+<script type="text/javascript">
+  $(".one-tag").remove();
+  $(".tag-{{page.tag}}").remove();
+</script>
