@@ -1,5 +1,6 @@
-# Script to generate template for categories and tag
+# Script to generate template for categories and tags
 # Run this script before push to github everytime you create a new post
+# or change categories, tags of a post
 
 def generate_template_for type
 
@@ -18,9 +19,18 @@ def generate_template_for type
 
   items.uniq!
 
-  # create templates files and polulate them with YAML front matter
   Dir.mkdir type unless Dir.exist? type
 
+  # delete unused template files
+  Dir.glob("#{type}/*") do |file_name|
+    # look behind for "#{type}/"
+    # look ahead for ".md"
+    item = file_name.match /(?<=#{type}\/)[\w-]+(?=\.md)/
+
+    File.delete file_name unless items.include? item
+  end
+
+  # create template files and polulate them with YAML front matter
   items.each do |item|
     front_matter = <<EOF
 ---
