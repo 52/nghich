@@ -1,8 +1,8 @@
 ---
-date:
-title:
-categories:
-description:
+title: 
+categories: 
+tags: 
+description: 
 type: Document
-permalink:
+permalink: 
 ---

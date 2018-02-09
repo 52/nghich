@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<h2>Uncategorized</h2>
+
+<ul class="listing">
+  {% for post in site.posts %}
+    {% if post.categories.size == 0 %}
+      <li>
+            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+
+            <div class="lighter-color">{{ post.description }}</div>
+
+            <div class="tag-buttons">
+              {% assign number_of_tags = post.tags | size %}
+              {% if number_of_tags > 0 %}
+                {% if number_of_tags == 1 %}
+                  <span class="lighter-color one-tag">Tag:<span>
+                {% else %}
+                  <span class="lighter-color">Tags:<span>
+                {% endif %}
+
+                {% for tag in post.tags %}
+                  <a class="tag-{{tag}}" href="{{ site.baseurl }}/tag/{{ tag }}/">
+                    <code>{{ tag }}</code>
+                  </a>
+                {% endfor %}
+              {% endif%}
+            </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
