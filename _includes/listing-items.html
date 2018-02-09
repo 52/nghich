@@ -1,0 +1,40 @@
+<h2>{{page.title}}<span class="count">({{items.size}})</span></h2>
+
+<!-- Sorting items by size -->
+{% capture temp_items %}
+  {% for item in items %}
+    {{ item[1].size | plus: 10000 }}#{{ item[0] }}#{{ item[1].size }}
+  {% endfor %}
+{% endcapture %}
+{% assign sorted_temp_items = temp_items | split:' ' | sort | reverse %}
+
+<!-- Listing sorted items -->
+<section class="items">
+  {% for temp_item in sorted_temp_items %}
+    {% assign item = temp_item | split: '#' %}
+    {% assign name = item[1] %}
+    {% assign size = item[2] %}
+
+    <section class="item">
+        <h3>
+          <a href="{{ site.baseurl }}/{{item_type}}/{{ name }}/">
+            {% if item_type == "category" %}
+              <span class="category-name">{{ name | replace: "-", " " }}</span>
+            {% else %}
+              <code>{{ name }}</code>
+            {% endif %}
+            <span class="count">({{size}})</span>
+          </a>
+        </h3>
+
+    </section>
+  {% endfor %}
+
+  {% if item_type == "category" %}
+    <section class="item">
+        <h3>
+          <a href="{{ site.baseurl }}/uncategorized/">Uncategorized</a>
+        </h3>
+    </section>
+  {% endif %}
+</section>

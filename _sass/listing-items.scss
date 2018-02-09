@@ -1,0 +1,42 @@
+.count {
+  color: $light-grey;
+  font-size: .7em;
+  position: relative;
+  top: -2px;
+  padding-left: 5px;
+}
+
+.items {
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:stretch;
+  font-size: .9em;
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
+
+.item {
+  flex: 0 0 100%;
+
+  .category-name {
+    text-transform:capitalize;
+  }
+
+  @media #{$mid-point} {
+    flex: 0 0 50%;
+  }
+
+  @media #{$desktop} {
+    flex: 0 0 25%;
+  }
+  margin: 0 0 30px 0;
+
+  a{
+    text-decoration: none;
+  }
+}
