@@ -19,13 +19,6 @@ exclude:
   - README.md
   - LICENCE
 
-collections:
-  sets:
-
-
-jekyll-archives:
-  enabled: ['categories']
-
 defaults:
   -
     scope:
@@ -40,31 +33,6 @@ defaults:
       comments: true
   -
     scope:
-      type: "sets"
-    values:
-      _hide_content: true
-  -
-    scope:
       path: "index.html"
     values:
       body_class: "show_hero_search"
-# -----------
-# CloudCannon
-
-social_icons:
-  - Facebook
-  - Google Plus
-  - Instagram
-  - LinkedIn
-  - Pinterest
-  - Tumblr
-  - Twitter
-  - YouTube
-  - Email
-  - RSS
-
-types:
-  - Document
-  - Video
-
-_comments:
