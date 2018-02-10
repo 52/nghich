@@ -36,3 +36,16 @@ defaults:
       path: "index.html"
     values:
       body_class: "show_hero_search"
+
+  -
+    scope:
+      path: "pages"
+    values:
+      body_class: "show_hero_search"
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+paginate_path: "/pages/:num/"
+paginate: 10  
