@@ -11,9 +11,14 @@
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  padding: 10px 15px;
+  padding: 5px 15px;
   background: #404145;
   color: #C1C2C3;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  code {
+    padding: 0 0;
+  }
 }
 .highlight .hll { background-color: #ffc; }
 .highlight .gd { color: #2e3436; background-color: #0e1416; }
