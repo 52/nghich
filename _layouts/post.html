@@ -24,7 +24,7 @@ layout: default
 				Tags: 
 				{% for tag in page.tags %}
 					<a href="{{ site.baseurl }}/tag/{{ tag }}/">
-						<code>{{ tag }}</code>
+						<code>{{ tag | replace: "-", " " }}</code>
 					</a>
 				{% endfor %}
 			{% endif%}

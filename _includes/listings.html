@@ -24,7 +24,7 @@
 
 							{% for tag in item.tags %}
 								<a class="tag-{{tag}}" href="{{ site.baseurl }}/tag/{{ tag }}/">
-									<code>{{ tag }}</code>
+									<code>{{ tag | replace: "-", " " }}</code>
 								</a>
 							{% endfor %}
 						{% endif%}
