@@ -16,7 +16,7 @@ class Car
     @@total_count += 1
   end
   def self.total_count
-    @total_count
+    @@total_count
   end
 end
 
