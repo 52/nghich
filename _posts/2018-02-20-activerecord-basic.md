@@ -74,7 +74,9 @@ Post.find_by name: 'Spartacus', rating: 4
 Post.find_by "published_at < ?", 2.weeks.ago
 ```
 Trả về record đầu tiên thỏa mãn điều kiện.  
-Trả về `nil` nếu không tìm thấy  
+Trả về `nil` nếu không tìm thấy.    
+#### `find_or_initialize_by`
+#### `find_or_create_by`
 ### `where`
 ### `select`
 ### `order`
