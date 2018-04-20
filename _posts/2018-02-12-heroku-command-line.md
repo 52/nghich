@@ -15,6 +15,18 @@ heroku keys:add
 ```sh
 heroku create
 ```
+or
+```sh
+heroku create your-app-name
+```
+#### Set enviroment variables
+```sh
+heroku config:set NAME=your_name EMAIL=your_email_address 
+```
+#### List all set enviroment variables
+```sh
+heroku config
+```
 #### Deploy the app to Heroku
 ```sh
 git push heroku master
