@@ -54,4 +54,24 @@ Thông tin trả về:
   ]
 }
 ```
-Note: `ap` là câu lệnh của `awesome_print`
+Note: `ap` là câu lệnh của `awesome_print`  
+
+Ta cũng có thể tùy biến tên của models cũng như attributes. Ví dụ:
+```yaml
+en:
+  activerecord:
+    models:
+      user: "Customer"
+
+    attributes:
+      user:
+        email: "E-mail address"
+
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "can't be blank"
+
+```
