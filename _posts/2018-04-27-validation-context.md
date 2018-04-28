@@ -16,7 +16,7 @@ end
 >> u = User.new name: "ab"
 => #<User id: nil, name: "ab", age: nil>
 ```
-- Validate với scope `:user`:
+Validate với scope `:user`:
 ``` bash
 >> u.valid? :user
 => false
@@ -31,7 +31,7 @@ end
     ]
 }
 ```
-- Validate với scope `:admin`:
+Validate với scope `:admin`:
 ```bash
 >> u.valid? :admin
 => false
@@ -43,7 +43,7 @@ end
     ]
 }
 ```
-- Validate với scope mặc định:
+Validate với scope mặc định:
 ```bash
 >> u.valid?
 => false
@@ -60,7 +60,9 @@ ActiveRecord cung cấp sẵn 2 context:
 - `on: :create` validation sẽ chạy khi tạo mới một object
 - `on: :update` validation sẽ chạy khi update một object  
 
+
 Cũng có thể chạy validation trong nhiều context
+
 ```ruby
-  validates_length_of :name, minimum: 3, on: [:user, :create]
+validates_length_of :name, minimum: 3, on: [:user, :create]
 ```
