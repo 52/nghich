@@ -1,7 +1,7 @@
 # ----
 # Site
 
-title: Base
+title: Notes
 url: ""
 baseurl: "/notes"
 google_analytics_key:
@@ -48,4 +48,4 @@ plugins:
   - jekyll-paginate
 
 paginate_path: "/pages/:num/"
-paginate: 10  
+paginate: 50
