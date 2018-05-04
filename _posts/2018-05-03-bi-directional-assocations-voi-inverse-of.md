@@ -1,11 +1,11 @@
 ---
 title: inverse_of
 categories: rails
-tags: ActiveRecord assocation
-description: Bi-directional assocations với inverse_of
+tags: ActiveRecord association
+description: Bi-directional associations với inverse_of
 permalink: 
 ---
-## Bi-directional assocations là gì?
+## Bi-directional associations là gì?
 ```ruby
 class Author < ApplicationRecord
   has_many :books
@@ -15,7 +15,7 @@ class Book < ApplicationRecord
   belongs_to :author
 end
 ```
-Hai model `Author` và `Book` như trên chia sẻ một bi-directional assocation.  
+Hai model `Author` và `Book` như trên chia sẻ một bi-directional association.  
 Nhờ thế mà ActiveRecord sẽ chỉ load duy nhất một `Author` object, sẽ giúp chương trình chạy nhanh hơn và đồng bộ dữ liệu. Ví dụ:  
 ```bash
 >> a = Author.first
@@ -33,9 +33,9 @@ Nhờ thế mà ActiveRecord sẽ chỉ load duy nhất một `Author` object, s
 ```
 Trong ví dụ trên, `a` và `b.author` là một object.  
 
-ActiveRecord sẽ tự động xác định bi-directional assocation đối với các assocation dùng cách đặt tên theo chuẩn giống như ví dụ ở trên.  
-ActiveRecord không thể tự động xác định được bi-directional assocation đối với các trường hợp:
-- Assocation có scope
+ActiveRecord sẽ tự động xác định bi-directional association đối với các association dùng cách đặt tên theo chuẩn giống như ví dụ ở trên.  
+ActiveRecord không thể tự động xác định được bi-directional association đối với các trường hợp:
+- Association có scope
 - Dùng option `:foreign_key`
 - Dùng option `:through`  
 
@@ -60,7 +60,7 @@ end
 >> b.writer.name
 #> "John"
 ```
-Để xác định bi-directional assocation, ta dùng `inverse_of`:
+Để xác định bi-directional association, ta dùng `inverse_of`:
 ```ruby
 class Author < ApplicationRecord
   has_many :books, inverse_of: :writer
