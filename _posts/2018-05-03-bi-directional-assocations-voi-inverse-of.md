@@ -17,7 +17,7 @@ end
 ```
 Hai model `Author` và `Book` như trên chia sẻ một bi-directional association.  
 Nhờ thế mà ActiveRecord sẽ chỉ load duy nhất một `Author` object, sẽ giúp chương trình chạy nhanh hơn và đồng bộ dữ liệu. Ví dụ:  
-```bash
+```ruby
 >> a = Author.first
 #> <#Author id: 1, name: "John">
 
@@ -51,7 +51,7 @@ class Book < ApplicationRecord
   belongs_to :writer, class_name: :Author, foreign_key: :author_id
 end
 ```
-```bash
+```ruby
 >> b.writer.object_id == a.object_id
 #> false
 
@@ -66,7 +66,7 @@ class Author < ApplicationRecord
   has_many :books, inverse_of: :writer
 end
 ```
-```bash
+```ruby
 >> b.writer.object_id == a.object_id
 #> true
 
@@ -92,7 +92,7 @@ class Appointment < ApplicationRecord
   belongs_to :patient
 end
 ```
-```bash
+```ruby
 >> d = Doctor.first
 >> p = Doctor.patients.build name: "P"
 
@@ -116,4 +116,18 @@ end
 
 #> INSERT INTO "patients" ("name") VALUES ($1) RETURNING "id"  [["name", "P"]]
 #> INSERT INTO "appointments" ("doctor_id", "patient_id") VALUES ($1, $2) RETURNING "id"  [["doctor_id", 1], ["patient_id", 1]]
+```
+
+#### Tips:
+Nên luôn set option `inverse_of` trong mọi association  
+Để kiểm tra một association có inverse hay không:
+```ruby
+Author.reflect_on_association(:books).has_inverse?
+```
+```ruby
+@author.books.target
+@author.books.proxy_association
+@author.books.proxy_association.owner
+@author.books.proxy_association.target
+@author.books.proxy_association.reflection
 ```
