@@ -6,11 +6,13 @@ description:
 permalink: 
 ---
 Xét ví dụ:  
+
 - Author has_many books
 - Book belongs_to author
+
 Ta muốn liệt kê danh sách author kèm số books của mỗi author.  
 Cách hiệu quả nhất để làm việc này là dùng `counter_cache`.  
-Ta cũng có thể dùng query (group)[https://devdocs.io/rails~5.2/activerecord/querymethods#method-i-group] và (count)[https://devdocs.io/rails~5.2/activerecord/calculations#method-i-count] như sau:  
+Ta cũng có thể dùng query [group](https://devdocs.io/rails~5.2/activerecord/querymethods#method-i-group) và [count](https://devdocs.io/rails~5.2/activerecord/calculations#method-i-count) như sau:  
 ```ruby
 Author.joins(:books).group("authors.name").count
 ```
