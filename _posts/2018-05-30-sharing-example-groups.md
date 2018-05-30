@@ -11,8 +11,8 @@ Dùng include module bình thường chỉ share được helper methods giữa 
 - A shared example group exists *only* to be shared.  
 
 Keywords to define/use a shared group:    
-- `shared_context` / `include_context` are for reusing *common setup* and *helper logic*  
-- `shared_examples` / `include_examples` | `it_behaves_like` are for reusing *examples*
+`shared_context` / `include_context` are for reusing *common setup* and *helper logic*  
+`shared_examples` / `include_examples` | `it_behaves_like` are for reusing *examples*
 
 They're the same. Just a matter of 'get the words right'  
 
