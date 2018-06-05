@@ -74,7 +74,7 @@ end
 
 ___
 
-## List of macthers
+## List of matchers
 
 Nguyên tắc chọn matchers:  
 
@@ -115,7 +115,7 @@ expect(a).to be(b)
 expect(3).to eq 3.0      # 3 == 3.0   => true
 expect(3).not_to eql 3.0 # 3.eql? 3.0 => false
 ```
-___
+
 Alias:  
 - `an_object_eq_to` aliases `eq`
 - `an_object_equal_to` aliases `equal`
@@ -204,7 +204,6 @@ expect([1, 2, 3]).to include(an_object_satisfying(&:even?))
 ```
 `satisfy` như là một adapter, wrap một đoạn code Ruby và adapt vào matcher của RSpec.  
 
-___
 
 ### Higher-order matchers
 
