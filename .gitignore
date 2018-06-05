@@ -3,3 +3,4 @@ _site/
 .jekyll-metadata
 notes.sublime-workspace
 notes.sublime-project
+.ruby-version
