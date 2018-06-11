@@ -11,3 +11,11 @@ require "rspec/expectations"
 
 singleton_class.prepend RSpec::Matchers
 ```
+```ruby
+require "rspec/mocks/standalone"
+
+RSpec::Mocks.verify
+
+RSpec::Mocks.teardown
+RSpec::Mocks.setup
+```
