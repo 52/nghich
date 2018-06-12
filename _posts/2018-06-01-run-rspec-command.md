@@ -115,3 +115,4 @@ Cũng có thể set options trong environment variable `SPEC_OPTS`. Options ở 
 
 `rspec -rbyebug` require "byebug" trước khi chạy rspec. Tiện lợi khi debug spec.  
 
+`rspec` sẽ tự động thêm 2 folder `./spec` và `./lib` vào `$LOAD_PATH` khi chạy. Vì thế ta có thể `require` các file trong 2 folders này, thay vì `require_ralative`  
