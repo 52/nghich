@@ -97,6 +97,37 @@ Chạy tất cả các spec , trừ các spec có tag `:fast`:
 rspec --tag '~fast'
 ```
 
+#### Chạy test theo thứ tự ngẫu nhiên
+Chạy test theo thứ tự ngẫu nhiên giúp phát hiện những test phụ thuộc vào thứ tự chạy của nhau.  
+Có 2 cách để chạy test theo thứ tự ngẫu nhiên:  
+
+##### Config
+```ruby
+RSpec.configure do |config|
+  config.order = :random
+end
+```
+Với config này, mỗi lần chạy test suite, RSpec sẽ dùng tag `--seed {seed_number}` để tạo thứ tự random, ví dụ `--seed 1234`.  
+
+Nếu muốn chạy test theo thứ tự mặc định, dùng `--order defined`  
+
+##### Dùng commandline với tag
+`rspec --order rand` hoặc chạy random với một seed number cụ thể nào đó: `rspec --seed 1234`  
+
+
+Nếu phát hiện ra có test fail do có examples phụ thuộc vào thứ tự của nhau, để xác định các example nào gây lỗi, ta dùng `--bisect` kèm `--seed {seed_number}`. Trong đó `--seed {seed_number}` là thứ tự chạy random có lỗi phụ thuộc. Ví dụ:  
+```ruby
+>> rspec --order rand
+#> Run with seed: 1234
+#> 10 examples, 0 failure
+
+>> rspec --order rand
+#> Run with seed: 5678
+#> 10 examples, 1 failure 
+
+>> rspec --seed 5678 --bisect
+```
+
 #### Các option khác
 
 Option `--fail-fast` dừng ngay test khi có một example fail  
