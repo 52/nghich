@@ -182,6 +182,8 @@ Nếu dùng verify double, RSpec sẽ đối chiếu xem method `record` có th�
 
 Tương ứng cũng có: `instance_spy`, `class_spy`, `object_spy`  
 
+`class_double` và `object_double` dùng `respond_to?` để kiểm tra xem method có tồn tại hay không, còn `instance_double` dùng `method_defined?`. Do đó `instance_double` double không thể nhận ra được các method defined qua `method_missing`. Nếu muốn verify class có method động được defined qua `method_mising` thì dùng `object_double`.  
+
 ### Stubbed Constants
 ```ruby
 stub_const("PasswordHash::COST_FACTOR", 1)
