@@ -36,5 +36,3 @@ $('p').eq(1).text();       // trả về phần tử thứ 2 là jQuery object
 ```javascript
 $('p:eq(1)').text();
 ```
-Note: `:eq()` có 0 index-based, `:nth-child()` có 1 index-based
-
