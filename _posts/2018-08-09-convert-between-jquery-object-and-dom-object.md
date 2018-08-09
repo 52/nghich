@@ -32,4 +32,9 @@ Phân biệt giữa `.get()` và `.eq()`:
 $('p').get(1).textContent; // trả về phần tử thứ 2 là DOM object
 $('p').eq(1).text();       // trả về phần tử thứ 2 là jQuery object 
 ```
+Đối với `eq()`, có thể dùng psuedo selector tương đương:  
+```javascript
+$('p:eq(1)').text();
+```
+Note: `:eq()` có 0 index-based, `:nth-child()` có 1 index-based
 
